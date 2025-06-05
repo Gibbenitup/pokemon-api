@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+aiohttp
+python-dotenv
+beautifulsoup4
+sqlite3 (optional, builtin in stdlib for Python 3.12+)

@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+pokemon_scraper.db
+.idea/
+.DS_Store
