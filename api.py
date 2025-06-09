@@ -6,6 +6,7 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
+# CORS middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -14,6 +15,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Product model
 class Product(BaseModel):
     name: str
     store: str
@@ -24,6 +26,7 @@ class Product(BaseModel):
     image: Optional[str] = None
     variant: Optional[str] = None
 
+# ✅ Your live endpoint
 @app.get("/products", response_model=List[Product])
 def get_products():
     conn = sqlite3.connect("pokemon_scraper.db")
