@@ -1,18 +1,9 @@
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-import sqlite3
-from typing import List, Optional
 from pydantic import BaseModel
+from typing import List, Optional
+import sqlite3
 
 app = FastAPI()
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 class Product(BaseModel):
     name: str
